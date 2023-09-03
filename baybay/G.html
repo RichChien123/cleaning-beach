@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Cleaning Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="main.css"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+<header>
+    <h1>Beach Cleaning Awareness</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Beach Cleaning</a></li>
+            <li><a href="#pollution">Beach Pollution</a></li>
+            <li><a href="#get-involved">Get Involved</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <ul>
+                <button id="toggle-language-button">Toggle Language</button>
+            </ul>
+
+        </ul>
+    </nav>
+</header>
+
+
+
+<main>
+    <section id="home">
+        <h2>Welcome to Our Beach Cleaning Website</h2>
+
+        <p>
+            We are excited to welcome you to our beach cleanup website,
+            created and managed by a team of passionate high school students.
+            Our shared goal is to have a positive impact on our coastal environment by raising
+            awareness and participation in beach cleanups and environmental protection efforts.
+            Thank you for joining us on this journey as we work together to protect and preserve our precious
+            coastlines and marine ecosystems.
+        </p>
+    </section>
+
+    <section id="about">
+        <h2>About Beach Cleaning</h2>
+        <p>
+            Beach pollution refers to the pollution and degradation of coastal and shoreline areas,
+            usually caused by various human activities and natural factors.
+            This pollution can adversely affect the environment, marine life and public health.
+            Common sources of beach pollution include:
+        </p>
+        1.Plastic waste: Plastic debris such as bottles,
+        bags and microplastics often wash up on beaches,
+        posing a significant threat to marine animals that may ingest or become entangled in them.
+        </p>
+        2.Oil spills: Oil spills from shipping accidents or offshore
+        drilling can have devastating effects on beach ecosystems, covering shorelines and harming wildlife.
+        </p>
+        3.Sewage and wastewater: Improperly treated sewage and wastewater discharges can introduce harmful pathogens and
+        chemicals into coastal waters, making them unsuitable for swimming and damaging aquatic ecosystems.
+        </p>
+        4.Agricultural runoff: Excessive fertilizers, pesticides and sediments in agricultural areas can pollute coastal
+        waters, causing problems such as harmful algal blooms and oxygen depletion.
+        </p>
+        5.Last but not least, Trash and trash: Litter, including cigarette butts, food wrappers and discarded beach
+        equipment, can accumulate on beaches, ruining their natural beauty and affecting wildlife.
+
+
+        <p>
+            The consequences of beach pollution are far-reaching and include damage to fragile ecosystems, harm to marine
+            animals through ingestion and entanglement, reduced recreational opportunities, and economic losses for coastal
+            communities that rely on tourism. Efforts to combat beach pollution involve public awareness campaigns,
+            beach cleanups, stricter regulations on waste disposal and industrial practices, and the promotion of sustainable
+            living to reduce the use of plastic and harmful chemicals.
+        </p>
+    </section>
+    <section id="pollution">
+        <h2>Beach Pollution</h2>
+        <p>
+            Beach pollution poses a severe threat to our oceans and marine life. The most common types of
+            beach pollution include plastic waste, oil spills, and chemical runoff from nearby urban areas.
+            These pollutants can harm wildlife and damage delicate ecosystems.
+        </p>
+        <p>
+            By participating in beach cleaning initiatives, we can reduce pollution levels and protect the
+            health of our beaches and marine habitats.
+        </p>
+    </section>
+
+    <section id="get-involved">
+        <h2>Get Involved</h2>
+        <p>
+            You can make a significant impact by getting involved in our beach cleaning events. Join us in
+            our efforts to protect the environment and promote sustainable practices.
+        </p>
+        <p>
+            To participate in our upcoming beach cleaning events, please fill out the form below and indicate
+            your availability. Together, we can make a difference!
+        </p>
+        <form id="volunteer-form">
+            <label for="volunteer-name">Name:</label>
+            <input type="text" id="volunteer-name" required>
+            <label for="volunteer-email">Email:</label>
+            <input type="email" id="volunteer-email" required>
+            <label for="availability">Availability:</label>
+            <textarea id="availability" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+    </section>
+
+    <section id="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="#">Environmental Organizations</a></li>
+            <li><a href="#">Educational Articles</a></li>
+            <li><a href="#">Beach Cleaning Tips</a></li>
+
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/yourpage" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/yourpage" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/yourpage" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/yourprofile" class="fab fa-linkedin-in"></a>
+            </div>
+
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+            If you have any questions or would like to collaborate with us on beach cleaning initiatives,
+            please feel free to contact us using the form below.
+        </p>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section id="upcoming-events">
+        <h2>Upcoming Beach Cleaning Events</h2>
+        <div class="event">
+            <h3>Beach Cleanup at Sunny Shores</h3>
+            <p>Date: October 15, 2023</p>
+            <p>Location: Sunny Shores Beach</p>
+        </div>
+        <div class="event">
+            <h3>Coastal Conservation Seminar</h3>
+            <p>Date: November 5, 2023</p>
+            <p>Location: Community Center</p>
+        </div>
+    </section>
+</main>
+<button id="return-to-top" class="hidden">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+    // Get a reference to the button element
+    var returnToTopButton = document.getElementById("return-to-top");
+
+    // Add a click event listener to the button
+    returnToTopButton.addEventListener("click", function() {
+        // Scroll to the top of the page smoothly
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+</script>
+
+
+<footer>
+    <p>&copy; 2023 Beach Cleaning Awareness. All rights reserved.</p>
+
+</footer>
+
+<script src="scripts.js"></script>
+
+</body>
+
+</html>
