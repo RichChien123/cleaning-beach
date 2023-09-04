@@ -1,38 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggle-language-button');
     let currentLanguage = 'english'; // Default language
-    const languages = {
-        'english': 'languages/english.json',
-        'chinese': 'languages/chinese.json'
+
+    const translations = {
+        'english': {},
+        'chinese': {}
     };
 
-    // Function to load and apply translations
-    function loadTranslations(language) {
-        fetch(languages[language])
+    function loadLanguage(language) {
+        fetch(`languages/${language}.json`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to load language file');
                 }
                 return response.json();
             })
-            .then(data => applyTranslations(data))
+            .then(data => {
+                translations[language] = data;
+                applyTranslations(language);
+            })
             .catch(error => {
                 console.error('Error loading language file:', error);
             });
     }
 
-    // Function to apply translations to elements with data-translate attribute
-    function applyTranslations(data) {
+    function applyTranslations(language) {
         const elementsToTranslate = document.querySelectorAll('[data-translate]');
         elementsToTranslate.forEach(element => {
             const translationKey = element.getAttribute('data-translate');
-            if (data.hasOwnProperty(translationKey)) {
-                element.textContent = data[translationKey];
-            }
+            element.textContent = translations[language][translationKey] || '';
         });
     }
 
-    // Toggle language when the button is clicked
     toggleButton.addEventListener('click', function () {
         if (currentLanguage === 'english') {
             currentLanguage = 'chinese';
@@ -40,10 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
             currentLanguage = 'english';
         }
 
-        // Load and apply translations for the selected language
-        loadTranslations(currentLanguage);
+        applyTranslations(currentLanguage);
     });
 
     // Initial translation
-    loadTranslations(currentLanguage);
+    loadLanguage(currentLanguage);
 });
