@@ -4,7 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to load and apply translations
     function loadTranslations(language) {
-        fetch(`languages/${language}.json`)
+        let url;
+        if (language === 'chinese') {
+            url = 'https://github.com/RichChien123/cleaning-beach/raw/main/baybay/languages/chinese.json';
+        } else {
+            url = 'https://github.com/RichChien123/cleaning-beach/raw/main/baybay/languages/english.json';
+        }
+
+        fetch(url)
             .then(response => response.json())
             .then(data => applyTranslations(data))
             .catch(error => {
