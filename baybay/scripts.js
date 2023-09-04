@@ -1,19 +1,14 @@
-// JavaScript for Language Translation
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('toggle-language-button');
+    const toggleButton = document.getElementById('change-language-button');
     let currentLanguage = 'english'; // Default language
+    const chineseURL = 'https://github.com/RichChien123/cleaning-beach/raw/ff65c2fe7f7db6d4a1a95bfaf9bbf956c9f9580c/baybay/languages/chinese.json';
+    const englishURL = 'https://github.com/RichChien123/cleaning-beach/raw/ff65c2fe7f7db6d4a1a95bfaf9bbf956c9f9580c/baybay/languages/english.json';
 
     // Function to load and apply translations
     function loadTranslations(language) {
-        const langPath = `languages/${language}.json`; // Define the path to language files
-
-        fetch(langPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load language file: ${langPath}`);
-                }
-                return response.json();
-            })
+        const languageURL = language === 'english' ? englishURL : chineseURL;
+        fetch(languageURL)
+            .then(response => response.json())
             .then(data => applyTranslations(data))
             .catch(error => {
                 console.error('Error loading language file:', error);
