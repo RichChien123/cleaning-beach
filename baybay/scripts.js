@@ -1,18 +1,19 @@
+// JavaScript for Language Translation
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggle-language-button');
     let currentLanguage = 'english'; // Default language
 
     // Function to load and apply translations
     function loadTranslations(language) {
-        let url;
-        if (language === 'chinese') {
-            url = 'https://github.com/RichChien123/cleaning-beach/raw/main/baybay/languages/chinese.json';
-        } else {
-            url = 'https://github.com/RichChien123/cleaning-beach/raw/main/baybay/languages/english.json';
-        }
+        const langPath = `languages/${language}.json`; // Define the path to language files
 
-        fetch(url)
-            .then(response => response.json())
+        fetch(langPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load language file: ${langPath}`);
+                }
+                return response.json();
+            })
             .then(data => applyTranslations(data))
             .catch(error => {
                 console.error('Error loading language file:', error);
