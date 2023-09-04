@@ -7,22 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
         'chinese': {}
     };
 
-    function loadLanguage(language) {
-        fetch(`languages/${language}.json`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load language file');
-                }
-                return response.json();
-            })
-            .then(data => {
-                translations[language] = data;
+function loadLanguage(language) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                translations[language] = JSON.parse(xhr.responseText);
                 applyTranslations(language);
-            })
-            .catch(error => {
-                console.error('Error loading language file:', error);
-            });
-    }
+            } else {
+                console.error('Failed to load language file:', xhr.status, xhr.statusText);
+            }
+        }
+    };
+    xhr.open('GET', `languages/${language}.json`, true);
+    xhr.send();
+}
+
 
     function applyTranslations(language) {
         const elementsToTranslate = document.querySelectorAll('[data-translate]');
