@@ -2,36 +2,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggle-language-button');
     let currentLanguage = 'english'; // Default language
 
-    const translations = {
-        'english': {},
-        'chinese': {}
-    };
+    // Function to load and apply translations
+    function loadTranslations(language) {
+        fetch(`languages/${language}.json`)
+            .then(response => response.json())
+            .then(data => applyTranslations(data))
+            .catch(error => {
+                console.error('Error loading language file:', error);
+            });
+    }
 
-function loadLanguage(language) {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                translations[language] = JSON.parse(xhr.responseText);
-                applyTranslations(language);
-            } else {
-                console.error('Failed to load language file:', xhr.status, xhr.statusText);
-            }
-        }
-    };
-    xhr.open('GET', `languages/${language}.json`, true);
-    xhr.send();
-}
-
-
-    function applyTranslations(language) {
+    // Function to apply translations to elements with data-translate attribute
+    function applyTranslations(data) {
         const elementsToTranslate = document.querySelectorAll('[data-translate]');
         elementsToTranslate.forEach(element => {
             const translationKey = element.getAttribute('data-translate');
-            element.textContent = translations[language][translationKey] || '';
+            if (data.hasOwnProperty(translationKey)) {
+                element.textContent = data[translationKey];
+            }
         });
     }
 
+    // Toggle language when the button is clicked
     toggleButton.addEventListener('click', function () {
         if (currentLanguage === 'english') {
             currentLanguage = 'chinese';
@@ -39,9 +31,10 @@ function loadLanguage(language) {
             currentLanguage = 'english';
         }
 
-        applyTranslations(currentLanguage);
+        // Load and apply translations for the selected language
+        loadTranslations(currentLanguage);
     });
 
     // Initial translation
-    loadLanguage(currentLanguage);
+    loadTranslations(currentLanguage);
 });
