@@ -1,41 +1,46 @@
 /* main.css */
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.75rem;
-    font-weight: normal;
-}
-
-p {
-    margin-bottom: 1rem;
+header {
+    background: url('header-image.jpg') no-repeat center center/cover;
+    height: 60vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
 }
 
 .container {
-    width: 80%;
+    max-width: 1200px;
     margin: auto;
-    overflow: hidden;
+    padding: 0 20px;
 }
 
-/* Basic button styling */
-.button {
-    display: inline-block;
-    background-color: #006b77;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+h1, h2, h3, h4, h5, h6 {
+    color: #006b77;
+    margin-bottom: 20px;
 }
 
-.button:hover {
-    background-color: #004e59;
+p {
+    margin-bottom: 20px;
+}
+
+.row {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
