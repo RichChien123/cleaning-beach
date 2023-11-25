@@ -1,25 +1,32 @@
 /* menu.css */
-
 nav {
-    background-color: #006b77;
+    background: rgba(0, 107, 119, 0.85);
+    color: white;
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+    margin: 0 15px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    background-color: #004e59;
+nav a:hover, nav a.active {
+    color: #FBB14E;
 }
 
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
+    }
+    nav a {
+        margin-bottom: 10px;
     }
 }
