@@ -1,3 +1,15 @@
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // Example of smooth scroll for navigation links
@@ -14,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+
+    
 
     // Example of simple form validation
     const contactForm = document.querySelector('#contact form');
