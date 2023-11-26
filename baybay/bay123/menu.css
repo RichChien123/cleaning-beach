@@ -1,32 +1,44 @@
-/* menu.css */
+/* menu.css - Enhanced Navigation Menu Styles */
+
 nav {
     background: rgba(0, 107, 119, 0.85);
-    color: white;
-    display: flex;
-    justify-content: center;
     padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
+    padding: 10px 0;
     transition: color 0.3s ease;
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
     color: #FBB14E;
+    border-bottom: 2px solid #FBB14E;
 }
 
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
+        padding: 20px;
+        background: rgba(0, 107, 119, 0.95);
     }
+
     nav a {
         margin-bottom: 10px;
     }
+}
+
+/* Mobile Menu Toggle Styles */
+.nav-toggle {
+    /* Style your mobile menu toggle button here */
 }
