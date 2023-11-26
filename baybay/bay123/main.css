@@ -1,46 +1,112 @@
-/* main.css */
-body {
-    font-family: 'Segoe UI', sans-serif;
+/* main.css - Major Update for Styling and Layout */
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f4f4f4;
     line-height: 1.6;
 }
 
-header {
-    background: url('header-image.jpg') no-repeat center center/cover;
-    height: 60vh;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin-bottom: 1rem;
+    color: #006b77; /* Primary Color for Headings */
 }
 
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #006b77;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004e59; /* Darker shade for hover state */
+}
+
+/* Container for Content */
 .container {
+    width: 80%;
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #006b77;
-    margin-bottom: 20px;
+/* Header Styles */
+header {
+    background: url('path-to-header-bg.jpg') no-repeat center center/cover; /* Update the path */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
 }
 
-p {
-    margin-bottom: 20px;
+/* Navigation Menu */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 107, 119, 0.9);
+    z-index: 1000;
+    width: 100%;
+    padding: 10px 0;
 }
 
-.row {
-    padding: 40px 0;
-    border-bottom: 1px solid #ddd;
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
 }
 
-.footer {
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f8a14c;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Additional Styles */
+/* Add any other specific styles needed for your site */
