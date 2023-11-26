@@ -1,6 +1,61 @@
-/* styles.css */
+/* General Styles and Typography */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
 
-/* General Button Styling */
+h1, h2, h3, h4, h5, h6 {
+    color: #006b77;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: url('header-image.jpg') no-repeat center center/cover;
+    height: 60vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* Navigation Menu Styles */
+nav {
+    background: rgba(0, 107, 119, 0.85);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #FBB14E;
+}
+
+/* Button Styles */
 .button {
     background-color: #FBB14E;
     color: white;
@@ -16,7 +71,21 @@
     transform: translateY(-2px);
 }
 
-/* Card Styling */
+/* Section and Row Styles */
+.row {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Parallax Effect for Sections */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Card Styles */
 .card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -25,7 +94,7 @@
     margin-bottom: 20px;
 }
 
-/* Contact Form Styling */
+/* Contact Form Styles */
 .contact-form {
     background-color: white;
     padding: 20px;
@@ -66,12 +135,31 @@
     background-color: #004e59;
 }
 
-/* Responsive Adjustments */
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design Adjustments */
 @media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 0 15px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+
     .contact-form {
         width: 90%;
         margin: 20px auto;
     }
 }
-
-/* Add more specific styles here as needed */
